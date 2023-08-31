@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="./css/cartStyle.css">
+    <script type="text/javascript" src="./cart.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id="highBanner">여러분의 성장을 응원합니다.</div>
+        <nav id="nav">
+            <ul>
+                <li class="subnav">마이페이지</li>
+                <li><a href="personalData.html">개인정보 수정</a></li>
+                <li><a href="kongBooBang.html">내 콩부방</a></li>
+                <li class="subnav">학습관리</li>
+                <li><a href="#">내 강의</a></li>
+                <li><a href="#">수료증 발급</a></li>
+                <li><a href="#">좋아요 표시한 강의</a></li>
+                <li><a href="cart.html" style="font-weight: bold;">장바구니</a></li>
+                <li><a href="#">결제 내역</a></li>
+            </ul>
+        </nav>
+        <section id="content">
+            <b>장바구니</b><br><br>
+            <form name="orderform" id="orderform" method="post" class="orderform" action="/Page" onsubmit="return false;">
+                <input type="hidden" name="cmd" value="order">
+                <div id="cart" class="cartdiv">
+                    <div class="row head">
+                        <div class="subdiv"></div>
+                        <div class="rowdata clearfix">
+                            <div class="check"><input type="checkbox" name="buy" value="260" checked="" onclick="cart.checkItem();">&nbsp;</div>
+                            <div class="pname">
+                                <span>Hello, Java!</span>
+                            </div>
+                            <div class="cartprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="20300">20,300원</div>
+                        </div>
+                        <div class="rowdata clearfix">
+                            <div class="check"><input type="checkbox" name="buy" value="261" checked="" onclick="cart.checkItem();">&nbsp;</div>
+                            <div class="pname">
+                                <span>일상 속 AI 만나기</span>
+                            </div>
+                            <div class="cartprice"><input type="hidden" name="p_price" id="p_price2" class="p_price" value="38500">38,500원</div>
+                        </div>
+                        <div class="rowdata clearfix">
+                            <div class="check"><input type="checkbox" name="buy" value="262" checked="" onclick="cart.checkItem();">&nbsp;</div>
+                            <div class="pname">
+                                <span>정보처리기사 필기</span>
+                            </div>
+                            <div class="cartprice"><input type="hidden" name="p_price" id="p_price3" class="p_price" value="48000">48,000원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="deleteItem">
+                    <a href="javascript:void(0)" class="abutton" onclick="cart.delCheckedItem();">선택상품 삭제</a>
+                    <a href="javascript:void(0)" class="abutton" onclick="cart.delAllItem();">전체 삭제</a>
+                </div>
+                <div class="carttotal clearfix">
+                    <p>총 결제금액 &nbsp; &nbsp;</p>
+                    <div id="sum_p_price" name="sum_p_price" class="allPrice">58,800원</div>
+                    <div class="buyButton">
+                        <a href="javascript:void(0);">결제하기</a>
+                    </div>
+                    <em>※ 회원 본인은 주문내용을 확인했으며, 구매조건 및 개인정보처리방침과 결제에 동의합니다.</em>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
